@@ -1,10 +1,14 @@
-const { app, BrowserWindow } = require('electron/main')
+const { app, BrowserWindow, nativeTheme } = require('electron/main')
 const path = require('node:path')
 
 function createWindow () {
+  nativeTheme.themeSource = 'dark'
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 720,
+    icon: 'icons/svg/globe.svg',
+    autoHideMenuBar: true,
+    resizable: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
