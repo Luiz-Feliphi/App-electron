@@ -7,14 +7,30 @@ function createWindow () {
     width: 1280,
     height: 720,
     icon: 'icons/svg/globe.svg',
-    autoHideMenuBar: true,
+    //autoHideMenuBar: true,
     resizable: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  win.setMenuBarVisibility(false)
-  win.loadFile('index.html')
+  //win.setMenuBarVisibility(false)
+  win.loadFile('app/index.html')
+}
+
+function childWindow(){
+  nativeTheme.themeSource = 'dark'
+  const win = new BrowserWindow({
+    width: 1280,
+    height: 720,
+    icon: 'icons/svg/globe.svg',
+    //autoHideMenuBar: true,
+    resizable: false,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
+  //win.setMenuBarVisibility(false)
+  win.loadFile('app/sobre.html')
 }
 
 app.whenReady().then(() => {
@@ -25,6 +41,8 @@ app.whenReady().then(() => {
       createWindow()
     }
   })
+
+
 })
 
 app.on('window-all-closed', () => {
@@ -32,3 +50,19 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+
+const template = [
+  {
+    label: 'A',
+    submenu:[
+      {
+        label:'laa',
+        click:() => childWindow()
+      },
+      {
+        label:'aa',
+        click:() => childWindow()
+      }
+    ]
+  }
+]
