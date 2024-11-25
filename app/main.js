@@ -1,3 +1,5 @@
+console.log('Processo Princcipal')
+console.log(`Electron ${process.versions.electron}`)
 const { app, BrowserWindow, nativeTheme } = require('electron/main')
 const path = require('node:path')
 
