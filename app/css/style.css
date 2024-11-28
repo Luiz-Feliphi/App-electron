@@ -6,6 +6,8 @@
     font-family: "Inter-Medium";
     src: url(font/Inter_28pt-Medium.ttf) format("truetype");
 }
+/*MENU*/
+
 #menu{
     background-color: aliceblue;
     border-right: 2px solid #E0E0E0;
@@ -13,8 +15,34 @@
     font-family: Inter;
 }
 
+p{
+    font-family: Inter;
+}
+
 .opcoes-lista{
     font-family: Inter-Medium;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    margin: 5px;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+.selecionado{
+    padding-left: 23%;
+    color: white;
+    border-radius: 5px;
+    background-color: #15a1a8;
+}
+
+.opcoes-lista:hover{
+    padding-left: 23%;
+    color: white;
+    border-radius: 5px;
+    background-color: #15a1a8;
+}
+
+.opcoes-lista svg{
     margin: 5px;
 }
 
@@ -32,10 +60,34 @@ ul{
     margin: 10px;
 }
 
+#image-lateral{
+    grid-column: 2/4;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+#image-lateral img{
+    width: calc(111px/2);
+    height: calc(307px/2);
+}
+#titulo-fora{
+    grid-column: 2/4;
+    grid-row: 1;
+    margin-left: 40px;
+    font-family: Inter-Medium;
+    font-weight:bolder ;
+    font-size: x-large;
+}
+/*MENU*/
+
+
 content{
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 1fr 3fr ;
     grid-template-rows: 1fr 1fr;
 }
