@@ -140,8 +140,10 @@ ul{
 #imagens-paises{
     display: flex;
     justify-content: space-around;
-    max-width: 300;
-    max-height: 300;
+}
+#imagens-paises img{
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .textos{
