@@ -213,3 +213,6 @@ content{
 .imagem-paises:hover{
     transform: scale(1.1);
 }
+.borda1{
+    border-radius: 30px;
+}
