@@ -9,13 +9,13 @@ function createWindow () {
     width: 1280,
     height: 720,
     icon: 'icons/svg/globe.svg',
-    //autoHideMenuBar: true,
+    autoHideMenuBar: true,
     resizable: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  //win.setMenuBarVisibility(false)
+  win.setMenuBarVisibility(false)
   win.loadFile('app/index.html')
 }
 
