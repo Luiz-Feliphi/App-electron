@@ -11,6 +11,7 @@ function createWindow () {
     icon: path.join(__dirname, 'icons/icon.ico'),
     autoHideMenuBar: true,
     resizable: true,
+    //execução do preload.js
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -19,6 +20,7 @@ function createWindow () {
   win.loadFile('app/index.html')
 }
 
+// Garante que uma nova janela seja criada ao ativar o app, especialmente no macOS
 app.whenReady().then(() => {
   createWindow()
 
@@ -29,6 +31,7 @@ app.whenReady().then(() => {
   })
 })
 
+// Abre uma nova janela no macOS se nenhuma estiver aberta ao reativar o app
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
